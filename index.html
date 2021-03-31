@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <form id="form">
+        <center><h2>Details Form</h2></center>
+        <hr>
+        <table><tr>
+            <td><label>Name: </label></td>
+            <td><input type="text" id="name" name="name" minlength="3" required></td>
+        </tr>
+        <tr><td><label>Mob. No.: </label></td><td><input type="number" id="number" name="number" maxlength="10" pattern="\d{10}" required></td></tr>
+        <tr><td><label>Email ID: </label></td>
+        <td><input type="email" id="email" name="email" pattern=".+@gmail.com" required></td></tr>
+        <tr><td></td><td><input type="submit" id="submit" value="Submit"></td></tr>
+        <tr><td><input type="search" id="search1" placeholder="Enter the name here"> </td><td><input type="submit" id="Search" value="Search"></td> </tr>
+        </table>
+    
+    </form>
+<hr>
+
+    <table id="myTable">
+
+    </table>
+    <script>
+        $(document).ready(function() {
+            $("#form").submit(function(e) {
+                e.preventDefault();
+                var rowCount = $('#myTable tr').length;
+
+                if (rowCount == 0) {
+                    var th = "<tr><th>Name</th><th>Number</th><th>Email</th></tr>";
+                    $("#myTable").append(th);
+                }
+
+                var name = $("#name").val();
+                var number = $("#number").val();
+                var email = $('#email').val();
+
+                var tr = `<tr><td><input class="ans" type="text" value=${name}>` +"</td><td>" +
+                    `<input class="ans" type="text" value=${number}>` + "</td><td>" + `<input class="ans" type="text" value=${email}>` + "</td><td><button class='dlt'>Delete</button></td></tr>";
+                $("#myTable").append(tr);
+                $('#email').val("");
+                $("#name").val("");
+                $("#number").val("");
+
+                $(".dlt").each(function() {
+                    $(this).click(function() {
+                        $(this).parent().parent().remove();
+                    })
+                });
+
+            });
+
+
+        });
+    </script>
+
+</body>
+
+</html>

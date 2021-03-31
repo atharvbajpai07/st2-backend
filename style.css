@@ -1,0 +1,34 @@
+body {
+    background-color: #d8d7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+  }
+  input {
+    width: 200px;
+  }
+  #submit {
+    background-color: #ffb76f;
+    color: black;
+    padding: 10px 20px;
+    width: 180px;
+ 
+  }
+  table {
+    border-spacing: 15px;
+  }
+  .dlt {
+    background-color: #f0e5a9;
+  }
+  .ans {
+    background-color: #c4c3c0;
+  }
+  hr{
+    border-top: 1px solid black;
+  }
+  #Search{
+    background-color:palegoldenrod ;
+   width: 80px;
+  }
